@@ -4,43 +4,48 @@
 <meta charset="UTF-8">
 </head>
 <body>
-	<div class="sidebar" data-color="blue" th:fragment="sidebar">
-		<!--
-        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
-    -->
-		<div class="logo"></div>
-		<div class="sidebar-wrapper" id="sidebar-wrapper">
-			<ul class="nav">
-				<li class="active "><a href="#"> <i
-						class="now-ui-icons design_app"></i>
-						<p>Dashboard</p>
-				</a></li>
-				<li><a href="#"> <i class="now-ui-icons education_atom"></i>
-						<p>Cadastro de Clientes</p>
-				</a></li>
-				<li><a href="#"> <i
-						class="now-ui-icons design_bullet-list-67"></i>
-						<p>Lista de Clientes</p>
-				</a></li>
 
 
-				<li><a href="#"> <i class="now-ui-icons education_atom"></i>
-						<p>Informações</p>
-				</a></li>
-				<li><a href="#"> <i class="now-ui-icons location_map-big"></i>
-						<p>Atividades</p>
-				</a></li>
+			<nav class="sidebar sidebar-open" th:fragment="nav-sidebar">
+				<ul class="nav nav-pills">
+					<li class="nav-item"><a class="nav-link " href="/"> <i
+							class="oi oi-home"></i> <span>Home</span>
+					</a></li>
+				</ul>
 
-				<li><a href="#"> <i class="now-ui-icons users_single-02"></i>
-						<p>User Profile</p>
-				</a></li>
+				<ul class="nav nav-pills">
+					<li class="nav-item"><span class="nav-link active" >Produto	</span></li>
+					<li class="nav-item"><a class="nav-link"
+						href="/produto/cadastrar"> <i class="oi oi-plus"></i> <span>Cadastrar</span>
+					</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="/produto/listar"> <i class="oi oi-spreadsheet"></i>
+							<span>Listar </span>
+					</a></li>
+				</ul>
 
+				<ul class="nav nav-pills">
+					<li class="nav-item"><span class="nav-link active" >Ofertas</span></li>
+					<li class="nav-item"><a class="nav-link" 
+						href="/oferta/cadastrar"> <i class="oi oi-plus"></i> <span>Cadastrar </span>
+					</a></li>
+					<li class="nav-item"><a class="nav-link" 
+						href="/oferta/listar"> <i
+							class="oi oi-spreadsheet"></i> <span>Listar </span>
+					</a></li>
+				</ul>
 
-
-			</ul>
-		</div>
-	</div>
-
+				<ul class="nav nav-pills">
+					<li class="nav-item"><span class="nav-link active">Cliente</span></li>
+					<li class="nav-item"><a class="nav-link" 
+						href="/cliente/cadastrar"> <i class="oi oi-plus"></i> <span>Cadastrar </span>
+					</a></li>
+					<li class="nav-item"><a class="nav-link" 
+						href="/cliente/listar"> <i class="oi oi-spreadsheet"></i> <span>Listar </span>
+					</a></li>
+				</ul>
+			</nav>
+		
 
 </body>
 </html>

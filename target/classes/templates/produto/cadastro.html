@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+<meta charset="UTF-8">
+</head>
+
+
+<body>
+	<section class="layout-content" layout:fragment="corpo">
+
+		<nav class="navbar navbar-expand-md bg-light">
+			<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active"><i class="oi oi-caret-right"></i>
+						<span>Cadastrar Produto</span></li>
+				</ul>
+			</div>
+			<a class="btn btn-primary btn-md" href="/produto/listar"
+				role="button"> <span class="oi oi-spreadsheet" title="Cadastro"
+				aria-hidden="true"></span> <span>Listar Produto</span>
+			</a>
+		</nav>
+
+		<div class="container" id="cadastro">
+		
+			<form th:object="${produto}" th:action="@{/produto/salvar}" 
+				method="POST">
+				<div class="form-group">
+
+					<div class="form-group col-md-4">
+						<label>Id </label> <input type="text"
+							class="form-control input-sm" id="id" placeholder="ID"
+							readOnly="readonly" th:field="*{produto_id}" />
+
+					</div>
+
+
+					<div class="form-group col-md-4">
+						<label for="nome">Nome do Produto</label> <input type="text"
+							class="form-control" id="nome" placeholder="Nome Produto"
+							autofocus="autofocus" th:field="*{produto_nome}" />
+					</div>
+					<div class="form-group col-md-4">
+						<label for="status">Status</label> <select id="status"
+							class="form-control" th:field="*{produto_status}">
+							<option value="">Selecione</option>
+							<option value="A">Ativo </option>
+							<option value="I">Inativo</option>
+
+
+						</select>
+					</div>
+					
+					<div class="form-group col-md-4">
+						<label for="status">Nivel de Instrução</label> <select id="status"
+							class="form-control" th:field="*{nivelInstrucao}">
+							<option value="">Selecione</option>
+							<option th:each="n : ${nivelInstrucao}" th:value="${n.nivel_instrucao_id}" 
+							th:text="${n.nivel_instrucao_descricao}"> </option>
+							
+
+
+						</select>
+					</div>
+
+
+				</div>
+
+				<div class="form-group">
+					<label for="exampleFormControlTextarea1">Descrição do Curso</label>
+					<textarea class="form-control" id="exampleFormControlTextarea1"
+						rows="3" th:field="*{produto_descricao}"></textarea>
+				</div>
+				<input type="hidden" id="id" name="id" value="" />
+				<button type="submit" class="btn btn-primary btn-sm">Salvar</button>
+			</form>
+		</div>
+	</section>
+
+
+</body>
+</html>
+
+
